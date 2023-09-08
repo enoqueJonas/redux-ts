@@ -17,6 +17,9 @@ export const RepositoriesList: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <input value={term} onChange={e => setTerm(e.target.value)}/>
         <button>Search</button>
+        {error && <h3>{error}</h3>}
+        {loading && <h3>Loading...</h3>}
+        {!error && !loading && data.map(name => <div>{name}</div>)}
       </form>
     </div>
   );
